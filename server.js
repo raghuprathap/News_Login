@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
 var config = require('./webpack.config');
-var index = require('./webserver/routes/index');
+//var index = require('./webserver/routes/index');
 var users = require('./webserver/routes/users');
 var saveNews = require('./webserver/routes/saveNews');
 var viewNews = require('./webserver/routes/viewSavedNews');
@@ -42,7 +42,7 @@ console.log("From server ");
 
 //Routes
 
-app.use('/data', index);
+//app.use('/data', index);
 app.use('/stream',users);
 app.use('/save',saveNews);
 app.use('/view',viewNews);
@@ -98,11 +98,11 @@ app.use(webpackHotMiddleware(compiler));
 
 
 
-//Listening to port 8080
-app.listen(8080, '0.0.0.0', function(err, result) {
+//Listening to port 9000
+app.listen(9000, '0.0.0.0', function(err, result) {
     if (err) {
         console.error("Error ", err);
     }
 
-    console.log("Server started at 8080");
+    console.log("Server started at 9000");
 });
